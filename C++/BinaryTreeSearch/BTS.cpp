@@ -38,10 +38,39 @@ void BTS<T>::insert(const T el)
     }
     else
     {
-        BTSNode<T> *node = root;
-        while (node != nullptr)
-        {
-            // TODO: Add if statement that checks if left el is < then el of current node
-        }
+        // TODO: Add stuff here
     }
+}
+
+template <class T>
+T *BST<T>::search(BTSNode<T> *node, const T &el) const
+{
+    if (node == nullptr)
+    {
+        return nullptr;
+    }
+    else if (el == node->key)
+    {
+        return &node->key;
+    }
+    else if (el < node->key)
+    {
+        return search(node->left, el);
+    }
+    else
+    {
+        return search(node->right, el);
+    }
+}
+
+template <class T>
+BSTNode<T> *BTS<T>::getRoot() const
+{
+    return root;
+}
+
+template <class T>
+void BTS<T>::deleteNode(const T el)
+{
+    // TODO: add delete right here
 }
