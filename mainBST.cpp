@@ -4,6 +4,7 @@
 
 int main()
 {
+    // Create tree
     BST<int> tree;
     tree.insert(tree.getRoot(), 38);
     tree.insert(tree.getRoot(), 5);
@@ -16,6 +17,8 @@ int main()
     tree.insert(tree.getRoot(), 15);
     tree.insert(tree.getRoot(), 13);
 
+    // Print tree in different orders
+    
     std::cout << "inorder: ";
     tree.inorder(tree.getRoot());
     std::cout << std::endl;
@@ -28,5 +31,9 @@ int main()
     tree.postorder(tree.getRoot());
     std::cout << std::endl;
 
+    std::cout << "breadthFirst: ";
+    std::cout << std::endl;
+    tree.breadthFirst();
+    
     return 0;
 }
